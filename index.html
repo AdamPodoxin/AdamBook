@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AdamBook</title>
+    <script src="currentUser.js"></script>
+    <script src="register.js"></script>
+    <script src="login.js"></script>
+    <script src="index.js"></script>
+
+    <style>
+        input:focus,
+        button:focus {
+            border-color: green;
+        }
+
+        #register, #login, #main {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="display-message-text" style="display: none;">Message</p>
+
+    <div id="register">
+        <form id="register-form">
+            <input type="text" placeholder="Username">
+
+            <br>
+
+            <input type="password" placeholder="Password">
+
+            <br>
+
+            <input type="password" placeholder="Confirm Password">
+        </form>
+        <button onclick="register()">Register</button>
+
+        <p>Already have an account? <a href="#" onclick="displayForm('login');">Click here</a> to login!</p>
+    </div>
+
+    <div id="login">
+        <p id="display-message-text" style="display: none;">Message</p>
+
+        <form id="login-form">
+            <input type="text" placeholder="Username">
+
+            <br>
+
+            <input type="password" placeholder="Password">
+        </form>
+        <button onclick="login()">Login</button>
+
+        <p>Don't have an account? <a href="#" onclick="displayForm('register');">Click here</a> to register!</p>
+    </div>
+
+    <div id="main">
+        <a href="#" onclick="logOut();">Log out</a>
+        <p id="username"></p>
+
+        <br>
+
+        <form id="add-friend-form">
+            <input type="text" id="add-friend-input">
+        </form>
+        <button onclick="addFriend()">Add Friend</button>
+
+        <br>
+
+        <h3>Pending Friend Requests:</h3>
+        <div id="pending-friend-requests">
+        </div>
+
+        <br>
+
+        <h3>Friends:</h3>
+        <div id="friends">
+        </div>
+    </div>
+</body>
+
+</html>
